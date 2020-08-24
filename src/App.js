@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import Radium, { StyleRoot } from 'radium';
 import './App.css';
 import Person from './Person/Person';
 //import { render } from '@testing-library/react';
@@ -85,23 +84,21 @@ class App extends Component{
     if (this.state.persons.length <= 2){
       classes.push('red'); // classes = ['red']
     }
-    if (this.state.persons.length <= 1){
+    if (this.state.persons.length <= 1){ 
       classes.push('bold'); // classes = ['red', 'bold']
     }
 
     return (
-      <StyleRoot>
-        <div className="App">
-          <h1>Hi, I'm a React App</h1>
-          <p className={classes.join(' ')}>This is a paragraph</p>
-          <button style={style} onClick={this.togglePersonsHandler}>Switch Name</button>
-          {persons}
-        </div>
-      </StyleRoot>
+      <div className="App">
+        <h1>Hi, I'm a React App</h1>
+        <p className={classes.join(' ')}>This is a paragraph</p>
+        <button style={style} onClick={this.togglePersonsHandler}>Switch Name</button>
+        {persons}
+      </div>
      );
     //return React.createElement('div', {className: 'App'}, React.createElement('h1', null, 'This is a heading'));
     //return React.createElement('div', {className: 'App'}, 'This is not');
   }
 }
 
-export default Radium(App);
+export default App;
