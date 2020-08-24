@@ -1,10 +1,24 @@
 import React, { Component } from 'react';
+import styled from 'styled-components';
 import './App.css';
 import Person from './Person/Person';
 //import { render } from '@testing-library/react';
 
-class App extends Component{
+const StyledButton = styled.button`
+  background-color: green;
+  color: white;
+  font: inherit;
+  border: 1px solid blue;
+  padding: 8px;
+  cursor: pointer;
+  
+  &:hover {
+    background-color: lightgreen;
+    color: black;
+  }
+`;
 
+class App extends Component{
   state = {
     persons: [
       {id: 'asdf', name: 'Andre', age: 22},
@@ -92,7 +106,7 @@ class App extends Component{
       <div className="App">
         <h1>Hi, I'm a React App</h1>
         <p className={classes.join(' ')}>This is a paragraph</p>
-        <button style={style} onClick={this.togglePersonsHandler}>Switch Name</button>
+        <StyledButton onClick={this.togglePersonsHandler}>Switch Name</StyledButton>
         {persons}
       </div>
      );
